@@ -28,7 +28,7 @@
                   "secondary": "{{ state_attr('media_player.spotify_1140761442', 'media_artist') | default('Prêt à écouter', true) }}",
                   "icon": "mdi:spotify",
                   "icon_color": "green",
-                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 12px; }" }
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 12px; height: 60px !important; }" }
                 },
                 {
                   "type": "grid",
@@ -49,7 +49,7 @@
                     { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_chambre_bureaux_parents", "name": "Chambre", "icon": "mdi:speaker", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] }
                   ]
                 },
-                { "type": "custom:mushroom-media-player-card", "entity": "media_player.spotify_1140761442", "use_media_artwork": true, "show_volume_level": true, "fill_container": true, "card_mod": { "style": "ha-card { background: none; border: none; }" } }
+                { "type": "custom:mushroom-media-player-card", "entity": "media_player.spotify_1140761442", "use_media_artwork": true, "show_volume_level": true, "fill_container": true, "card_mod": { "style": "ha-card { background: none; border: none; padding: 0px !important; margin-top: -10px !important; }" } }
               ]
             },
             {
@@ -153,21 +153,21 @@
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.salon", "name": "Salon", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.sejour", "name": "Séjour", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.cuisine", "name": "Cuisine", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.salle_de_bain", "name": "SdB", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_amandine", "name": "Combles Amandine", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_antho", "name": "Combles Antho", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_marine", "name": "Combles Marine", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Bureau Impasse", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_petite_fenetre_bureau", "name": "P. Fenêtre Bureau", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_rue_basse", "name": "Alba Rue Basse", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_cote_amandine", "name": "Alba Amandine", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_brune", "name": "Brune", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte RDC", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Fenêtre RDC", "show_position_control": true },
-                    { "type": "custom:mushroom-cover-card", "entity": "cover.fenetre_balcon_buanderie", "name": "Buanderie", "show_position_control": true }
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.salon", "name": "Salon", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.sejour", "name": "Séjour", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.cuisine", "name": "Cuisine", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.salle_de_bain", "name": "SdB", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_amandine", "name": "Combles Amandine", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_antho", "name": "Combles Antho", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_marine", "name": "Combles Marine", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Bureau Impasse", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_petite_fenetre_bureau", "name": "P. Fenêtre Bureau", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_rue_basse", "name": "Alba Rue Basse", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_cote_amandine", "name": "Alba Amandine", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_brune", "name": "Brune", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte RDC", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Fenêtre RDC", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.fenetre_balcon_buanderie", "name": "Buanderie", "show_position_control": true, "card_mod": { "style": "ha-card { height: 45px !important; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); }\n.mushroom-state-item { margin-top: -12px !important; }" } }
                   ]
                 }
               ]
@@ -217,10 +217,10 @@
                   "type": "grid",
                   "columns": 4,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:thermometer", "icon_color": "red", "primary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:cpu-64-bit", "icon_color": "blue", "primary": "{{ states('sensor.system_monitor_utilisation_du_processeur') }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:database", "icon_color": "purple", "primary": "{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:memory", "icon_color": "orange", "primary": "{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:thermometer", "icon_color": "red", "primary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°", "card_mod": { "style": "ha-card { background: rgba(255,0,0,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:cpu-64-bit", "icon_color": "blue", "primary": "{{ states('sensor.system_monitor_utilisation_du_processeur') }}%", "card_mod": { "style": "ha-card { background: rgba(0,122,255,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:database", "icon_color": "purple", "primary": "{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(175,82,222,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:memory", "icon_color": "orange", "primary": "{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(255,159,10,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
                   ]
                 },
                 { "type": "custom:bubble-card", "card_type": "separator", "name": "SANTÉ & SPORT 🏃‍♂️", "icon": "mdi:heart-pulse" },
@@ -228,10 +228,10 @@
                   "type": "grid",
                   "columns": 4,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:sleep", "icon_color": "purple", "primary": "{{ states('sensor.garmin_connect_sleep_score') }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:run", "icon_color": "yellow", "primary": "{% set a = states('sensor.garmin_connect_last_activity') %}{{ a if a != 'unknown' else 'N/A' }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 9px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:battery-heart", "icon_color": "blue", "primary": "{{ states('sensor.garmin_connect_body_battery_most_recent') }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:heart-pulse", "icon_color": "red", "primary": "{{ states('sensor.garmin_connect_resting_heart_rate') }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:sleep", "icon_color": "purple", "primary": "{{ states('sensor.garmin_connect_sleep_score') }}", "card_mod": { "style": "ha-card { background: rgba(175,82,222,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:run", "icon_color": "yellow", "primary": "{% set a = states('sensor.garmin_connect_last_activity') %}{{ a if a != 'unknown' else 'N/A' }}", "card_mod": { "style": "ha-card { background: rgba(255,214,10,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 9px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:battery-heart", "icon_color": "blue", "primary": "{{ states('sensor.garmin_connect_body_battery_most_recent') }}%", "card_mod": { "style": "ha-card { background: rgba(10,132,255,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:heart-pulse", "icon_color": "red", "primary": "{{ states('sensor.garmin_connect_resting_heart_rate') }}", "card_mod": { "style": "ha-card { background: rgba(255,69,58,0.1); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
                   ]
                 },
                 {
@@ -240,7 +240,7 @@
                   "secondary": "Serveur & Multimédia",
                   "icon": "mdi:server",
                   "icon_color": "yellow",
-                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 15px; margin-top: 10px; height: 50px !important; }" }
+                  "card_mod": { "style": "ha-card { background: rgba(255,214,10,0.1); border-radius: 15px; margin-top: 10px; height: 50px !important; }" }
                 }
               ]
             }
