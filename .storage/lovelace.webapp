@@ -4,7 +4,7 @@
   "key": "lovelace.webapp",
   "data": {
     "config": {
-      "title": "Assistant Antho (Bespoke 2026)",
+      "title": "Assistant Antho (Bespoke 2k26)",
       "views": [
         {
           "title": "Home",
@@ -16,10 +16,10 @@
                 {
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
-                  "hash": "#audio",
+                  "hash": "audio",
                   "name": "Audio Center",
                   "icon": "mdi:music",
-                  "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(40px) !important; }"
+                  "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(40px) !important; }"
                 },
                 {
                   "type": "media-control",
@@ -49,7 +49,7 @@
                 {
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
-                  "hash": "#covers",
+                  "hash": "covers",
                   "name": "Somfy Home App",
                   "icon": "mdi:window-shutter",
                   "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; }"
@@ -85,53 +85,58 @@
               "type": "vertical-stack",
               "cards": [
                 {
-                  "type": "custom:bubble-card",
-                  "card_type": "header",
-                  "name": "Assistant Antho",
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Antho Assistant",
+                  "secondary": "Domotique Bespoke 2026",
                   "icon": "mdi:home-automation",
-                  "styles": ".bubble-header-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(25px); border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 25px; }\n.bubble-header h1 { color: white !important; font-weight: 900 !important; font-size: 24px !important; }\n.bubble-icon { color: white !important; }"
+                  "icon_color": "white",
+                  "card_mod": {
+                    "style": "ha-card {\n  background: rgba(255, 255, 255, 0.05);\n  backdrop-filter: blur(25px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  margin-bottom: 25px;\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.7);\n}"
+                  }
                 },
                 {
-                  "type": "custom:bubble-card",
-                  "card_type": "button",
-                  "button_type": "name",
-                  "name": "Somfy (Volets)",
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Somfy (Volets)",
+                  "secondary": "Contrôle des 15 volets",
                   "icon": "mdi:window-shutter",
-                  "card_layout": "large",
                   "tap_action": { "action": "navigate", "navigation_path": "#covers" },
-                  "styles": ".bubble-button { background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%) !important; border-radius: 40px; height: 160px !important; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }\n.bubble-name, .bubble-sub-name, .bubble-icon { color: white !important; opacity: 1 !important; }"
+                  "card_mod": {
+                    "style": "ha-card {\n  background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);\n  border-radius: 35px;\n  height: 160px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.85);\n  --card-mod-icon-color: white;\n}\n.container { padding: 35px !important; }\n.primary { font-size: 28px !important; font-weight: 800 !important; }\n.secondary { font-size: 16px !important; margin-top: 5px !important; }"
+                  }
                 },
                 {
-                  "type": "custom:bubble-card",
-                  "card_type": "button",
-                  "button_type": "name",
-                  "name": "Audio Center",
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Audio Center",
+                  "secondary": "Bose & Harman Kardon",
                   "icon": "mdi:music",
-                  "card_layout": "large",
                   "tap_action": { "action": "navigate", "navigation_path": "#audio" },
-                  "styles": ".bubble-button { background: linear-gradient(135deg, #1DB954 0%, #191414 100%) !important; border-radius: 40px; height: 160px !important; margin-top: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }\n.bubble-name, .bubble-sub-name, .bubble-icon { color: white !important; opacity: 1 !important; }"
+                  "card_mod": {
+                    "style": "ha-card {\n  background: linear-gradient(135deg, #1DB954 0%, #191414 100%);\n  border-radius: 35px;\n  height: 160px;\n  margin-top: 30px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.85);\n  --card-mod-icon-color: #1DB954;\n}\n.container { padding: 35px !important; }\n.primary { font-size: 28px !important; font-weight: 800 !important; }\n.secondary { font-size: 16px !important; margin-top: 5px !important; }"
+                  }
                 },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
                     {
-                      "type": "custom:bubble-card",
-                      "card_type": "button",
-                      "button_type": "name",
-                      "name": "Jack",
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Jack",
+                      "secondary": "Aspirateur",
                       "icon": "mdi:robot-vacuum",
                       "tap_action": { "action": "more-info", "entity": "vacuum.jack" },
-                      "styles": ".bubble-button { background: linear-gradient(135deg, #4facfe, #00f2fe) !important; border-radius: 30px; height: 120px !important; }\n.bubble-name, .bubble-icon { color: white !important; }"
+                      "card_mod": {
+                        "style": "ha-card {\n  background: linear-gradient(135deg, #4facfe, #00f2fe);\n  border-radius: 30px;\n  height: 120px;\n}\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }"
+                      }
                     },
                     {
-                      "type": "custom:bubble-card",
-                      "card_type": "button",
-                      "button_type": "name",
-                      "name": "NAS",
+                      "type": "custom:mushroom-template-card",
+                      "primary": "NAS",
+                      "secondary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°C",
                       "icon": "mdi:server-network",
                       "tap_action": { "action": "more-info", "entity": "sensor.system_monitor_temperature_du_processeur" },
-                      "styles": ".bubble-button { background: linear-gradient(135deg, #667eea, #764ba2) !important; border-radius: 30px; height: 120px !important; }\n.bubble-name, .bubble-icon { color: white !important; }"
+                      "card_mod": {
+                        "style": "ha-card {\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  border-radius: 30px;\n  height: 120px;\n}\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }"
+                      }
                     }
                   ]
                 }

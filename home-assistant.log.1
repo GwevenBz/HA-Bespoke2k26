@@ -1,14 +1,11 @@
-2026-02-03 07:49:49.206 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 07:49:49.206 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration dreame_vacuum which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 07:49:49.207 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration soundtouchplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 07:49:49.207 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration garmin_connect which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 07:49:50.630 ERROR (MainThread) [habluetooth.manager] Missing required permissions for Bluetooth management: Missing NET_ADMIN/NET_RAW capabilities for Bluetooth management. Automatic adapter recovery is unavailable. Add NET_ADMIN and NET_RAW capabilities to the container to enable it
-2026-02-03 07:49:50.634 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:49:51.637 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/miio/miot_device.py:23: FutureWarning: functools.partial will be a method descriptor in future Python versions; wrap it in enum.member() if you want to preserve the old behavior
-  Bool = partial(_str2bool)
-
-2026-02-03 07:49:51.771 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:49:52.120 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_default_certs with args (<ssl.SSLContext object at 0x7f1ac5fe9db0>, <Purpose.SERVER_AUTH: _ASN1Object(nid=129, shortname='serverAuth', longname='TLS Web Server Authentication', oid='1.3.6.1.5.5.7.3.1')>) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 722: context.load_default_certs(purpose)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 07:53:15.265 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 07:53:15.266 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration dreame_vacuum which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 07:53:15.266 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration soundtouchplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 07:53:15.266 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration garmin_connect which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 07:53:16.772 ERROR (MainThread) [habluetooth.manager] Missing required permissions for Bluetooth management: Missing NET_ADMIN/NET_RAW capabilities for Bluetooth management. Automatic adapter recovery is unavailable. Add NET_ADMIN and NET_RAW capabilities to the container to enable it
+2026-02-03 07:53:16.774 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:53:17.575 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:53:17.586 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_default_certs with args (<ssl.SSLContext object at 0x7f0a1c771d10>, <Purpose.SERVER_AUTH: _ASN1Object(nid=129, shortname='serverAuth', longname='TLS Web Server Authentication', oid='1.3.6.1.5.5.7.3.1')>) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 722: context.load_default_certs(purpose)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#load_default_certs
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -44,7 +41,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 07:49:52.123 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to set_default_verify_paths with args (<ssl.SSLContext object at 0x7f1ac5fe9db0>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 534: self.set_default_verify_paths()), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 07:53:17.588 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to set_default_verify_paths with args (<ssl.SSLContext object at 0x7f0a1c771d10>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 534: self.set_default_verify_paths()), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#set_default_verify_paths
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -80,7 +77,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 07:49:52.135 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_verify_locations with args (<ssl.SSLContext object at 0x7f1ac5fe9db0>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 124: ssl_ctx.load_verify_locations(cafile=cert_path)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 07:53:17.601 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_verify_locations with args (<ssl.SSLContext object at 0x7f0a1c771d10>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 124: ssl_ctx.load_verify_locations(cafile=cert_path)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#load_verify_locations
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -116,7 +113,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 07:49:52.137 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open with args (PosixPath('/config/.storage/freebox/dixn7vr3_fbxos_fr.conf'), 'r') inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 328: with open(token_file, "r") as f:), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 07:53:17.603 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open with args (PosixPath('/config/.storage/freebox/dixn7vr3_fbxos_fr.conf'), 'r') inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 328: with open(token_file, "r") as f:), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#open
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -152,46 +149,41 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 07:49:52.897 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 07:49:52.907 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 07:49:52.911 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 07:49:52.979 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 07:49:53.326 WARNING (MainThread) [homeassistant.components.freebox.router] Router Freebox Server (r2) API does not support RAID
-2026-02-03 07:49:53.335 WARNING (MainThread) [homeassistant.components.freebox.router] Home access is not granted
-2026-02-03 07:49:59.997 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:00.001 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:05.109 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:07.936 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:50:10.425 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:22.936 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:50:25.606 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:37.935 WARNING (SyncWorker_10) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:50:50.759 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 07:50:52.936 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:51:07.935 WARNING (SyncWorker_9) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 07:51:24.912 ERROR (MainThread) [homeassistant] Error doing job: Task exception was never retrieved (None)
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/router.py", line 138, in update_all
-    await self.update_device_trackers()
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/router.py", line 150, in update_device_trackers
-    self.supports_hosts, fbx_devices = await get_hosts_list_if_supported(
-                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        self._api
-        ^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/router.py", line 77, in get_hosts_list_if_supported
-    fbx_interfaces = await fbx_api.lan.get_interfaces() or []
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/freebox_api/api/lan.py", line 57, in get_interfaces
-    return await self._access.get("lan/browser/interfaces")
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/freebox_api/access.py", line 134, in get
-    return await self._perform_request(self.session.get, end_url)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/freebox_api/access.py", line 106, in _perform_request
-    resp = await verb(url, **request_params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/aiohttp/client.py", line 529, in _request
-    raise RuntimeError("Session is closed")
-RuntimeError: Session is closed
+2026-02-03 07:53:18.136 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/miio/miot_device.py:23: FutureWarning: functools.partial will be a method descriptor in future Python versions; wrap it in enum.member() if you want to preserve the old behavior
+  Bool = partial(_str2bool)
+
+2026-02-03 07:53:18.929 WARNING (MainThread) [homeassistant.components.freebox.router] Router Freebox Server (r2) API does not support RAID
+2026-02-03 07:53:19.050 WARNING (MainThread) [homeassistant.components.freebox.router] Home access is not granted
+2026-02-03 07:53:19.104 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 07:53:19.117 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 07:53:19.136 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 07:53:19.142 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 07:53:25.286 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:53:25.293 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:53:30.398 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:53:32.902 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:53:35.522 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:53:47.902 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:53:50.501 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:54:02.902 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:54:15.678 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:54:17.903 WARNING (SyncWorker_3) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:54:32.901 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:54:47.903 WARNING (SyncWorker_4) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:55:02.902 WARNING (SyncWorker_4) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:55:10.574 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:55:17.903 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:55:32.902 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:55:35.848 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:55:47.903 WARNING (SyncWorker_2) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:56:02.902 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:56:17.902 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:56:30.906 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:56:32.902 WARNING (SyncWorker_2) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:56:47.899 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:56:56.314 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 07:57:02.901 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:57:17.902 WARNING (SyncWorker_9) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:57:32.903 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:57:47.903 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 07:57:51.207 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
