@@ -17,9 +17,9 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#audio",
-                  "name": "Audio App",
+                  "name": "Audio Center",
                   "icon": "mdi:music",
-                  "styles": ".bubble-pop-up { background: rgba(0,0,0,0.95) !important; }"
+                  "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(40px) !important; }"
                 },
                 {
                   "type": "media-control",
@@ -28,7 +28,7 @@
                 {
                   "type": "custom:bubble-card",
                   "card_type": "separator",
-                  "name": "DIFFUSION AUDIO",
+                  "name": "SÉLECTEUR DE SORTIE",
                   "icon": "mdi:speaker-multiple"
                 },
                 {
@@ -40,14 +40,6 @@
                     { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_cuisine_3", "name": "Cuisine", "button_type": "state" },
                     { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_chambre_bureaux_parents", "name": "Chambre", "button_type": "state" }
                   ]
-                },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "button",
-                  "name": "Radio Découverte",
-                  "icon": "mdi:auto-fix",
-                  "tap_action": { "action": "call-service", "service": "script.spotify_discovery_radio" },
-                  "styles": ".bubble-button { background: #1DB954 !important; border-radius: 20px; }"
                 }
               ]
             },
@@ -59,13 +51,14 @@
                   "card_type": "pop-up",
                   "hash": "#covers",
                   "name": "Somfy Home App",
-                  "icon": "mdi:window-shutter"
+                  "icon": "mdi:window-shutter",
+                  "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; }"
                 },
                 {
                   "type": "custom:bubble-card",
                   "card_type": "button",
                   "entity": "group.tous_les_volets",
-                  "name": "TOUT FERMER",
+                  "name": "FERMER TOUTE LA MAISON",
                   "button_type": "switch",
                   "card_layout": "large",
                   "styles": ".bubble-button { background-color: #c0392b !important; }"
@@ -83,27 +76,7 @@
                     { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salon", "button_type": "cover" },
                     { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.sejour", "button_type": "cover" },
                     { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.cuisine", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Chambre RDC", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte RDC", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.fenetre_balcon_buanderie", "name": "Buanderie", "button_type": "cover" }
-                  ]
-                },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "ÉTAGE",
-                  "icon": "mdi:home-floor-1"
-                },
-                {
-                  "type": "grid",
-                  "columns": 2,
-                  "cards": [
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_amandine", "name": "Amandine", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_antho", "name": "Bureau A.", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_marine", "name": "Bureau M.", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salle_de_bain", "name": "SDB", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Impasse", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_brune", "name": "Brune", "button_type": "cover" }
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Chambre RDC", "button_type": "cover" }
                   ]
                 }
               ]
@@ -115,7 +88,8 @@
                   "type": "custom:bubble-card",
                   "card_type": "header",
                   "name": "Assistant Antho",
-                  "icon": "mdi:home-automation"
+                  "icon": "mdi:home-automation",
+                  "styles": ".bubble-header-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(25px); border-radius: 25px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 25px; }\n.bubble-header h1 { color: white !important; font-weight: 900 !important; font-size: 24px !important; }\n.bubble-icon { color: white !important; }"
                 },
                 {
                   "type": "custom:bubble-card",
@@ -125,7 +99,7 @@
                   "icon": "mdi:window-shutter",
                   "card_layout": "large",
                   "tap_action": { "action": "navigate", "navigation_path": "#covers" },
-                  "styles": ".bubble-button { background: linear-gradient(135deg, #FF512F, #DD2476); border-radius: 30px; height: 140px !important; box-shadow: 0 10px 30px rgba(221, 36, 118, 0.5); }"
+                  "styles": ".bubble-button { background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%) !important; border-radius: 40px; height: 160px !important; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }\n.bubble-name, .bubble-sub-name, .bubble-icon { color: white !important; opacity: 1 !important; }"
                 },
                 {
                   "type": "custom:bubble-card",
@@ -135,7 +109,7 @@
                   "icon": "mdi:music",
                   "card_layout": "large",
                   "tap_action": { "action": "navigate", "navigation_path": "#audio" },
-                  "styles": ".bubble-button { background: linear-gradient(135deg, #1DB954, #191414); border-radius: 30px; height: 140px !important; margin-top: 20px; box-shadow: 0 10px 30px rgba(29, 185, 84, 0.5); }"
+                  "styles": ".bubble-button { background: linear-gradient(135deg, #1DB954 0%, #191414 100%) !important; border-radius: 40px; height: 160px !important; margin-top: 25px; box-shadow: 0 15px 40px rgba(0,0,0,0.4); }\n.bubble-name, .bubble-sub-name, .bubble-icon { color: white !important; opacity: 1 !important; }"
                 },
                 {
                   "type": "grid",
@@ -148,16 +122,16 @@
                       "name": "Jack",
                       "icon": "mdi:robot-vacuum",
                       "tap_action": { "action": "more-info", "entity": "vacuum.jack" },
-                      "styles": ".bubble-button { background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 25px; height: 110px !important; }"
+                      "styles": ".bubble-button { background: linear-gradient(135deg, #4facfe, #00f2fe) !important; border-radius: 30px; height: 120px !important; }\n.bubble-name, .bubble-icon { color: white !important; }"
                     },
                     {
                       "type": "custom:bubble-card",
                       "card_type": "button",
                       "button_type": "name",
-                      "name": "Système",
+                      "name": "NAS",
                       "icon": "mdi:server-network",
                       "tap_action": { "action": "more-info", "entity": "sensor.system_monitor_temperature_du_processeur" },
-                      "styles": ".bubble-button { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 25px; height: 110px !important; }"
+                      "styles": ".bubble-button { background: linear-gradient(135deg, #667eea, #764ba2) !important; border-radius: 30px; height: 120px !important; }\n.bubble-name, .bubble-icon { color: white !important; }"
                     }
                   ]
                 }
