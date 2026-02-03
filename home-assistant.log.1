@@ -1,189 +1,13 @@
-2026-02-03 15:36:42.073 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.073 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration dreame_vacuum which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.074 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration soundtouchplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.074 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration myelectricaldata which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.074 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tarif_edf which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.075 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration garmin_connect which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:42.075 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration myEnedis which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2026-02-03 15:36:43.393 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%) renders=2>
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
-    value = round(float(value), precision)
-                  ~~~~~^^^^^^^
-ValueError: could not convert string to float: 'unknown'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
-    render_result = render_with_context(self.template, compiled, **kwargs)
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
-    return template.render(**kwargs)
-           ~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "<template>", line 1, in top-level template code
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
-    raise_no_default("round", value)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
-    raise ValueError(
-    ...<2 lines>...
-    )
-ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
-    render_info._result = self.async_render(  # noqa: SLF001
-                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-        variables, strict=strict, log_fn=log_fn, **kwargs
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
-    raise TemplateError(err) from err
-homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
-2026-02-03 15:36:43.397 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%) renders=2>
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
-    value = round(float(value), precision)
-                  ~~~~~^^^^^^^
-ValueError: could not convert string to float: 'unknown'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
-    render_result = render_with_context(self.template, compiled, **kwargs)
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
-    return template.render(**kwargs)
-           ~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "<template>", line 1, in top-level template code
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
-    raise_no_default("round", value)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
-    raise ValueError(
-    ...<2 lines>...
-    )
-ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
-    render_info._result = self.async_render(  # noqa: SLF001
-                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-        variables, strict=strict, log_fn=log_fn, **kwargs
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
-    raise TemplateError(err) from err
-homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
-2026-02-03 15:36:43.532 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%) renders=6>
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
-    value = round(float(value), precision)
-                  ~~~~~^^^^^^^
-ValueError: could not convert string to float: 'unknown'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
-    render_result = render_with_context(self.template, compiled, **kwargs)
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
-    return template.render(**kwargs)
-           ~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "<template>", line 1, in top-level template code
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
-    raise_no_default("round", value)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
-    raise ValueError(
-    ...<2 lines>...
-    )
-ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
-    render_info._result = self.async_render(  # noqa: SLF001
-                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-        variables, strict=strict, log_fn=log_fn, **kwargs
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
-    raise TemplateError(err) from err
-homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
-2026-02-03 15:36:43.533 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%) renders=6>
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
-    value = round(float(value), precision)
-                  ~~~~~^^^^^^^
-ValueError: could not convert string to float: 'unknown'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
-    render_result = render_with_context(self.template, compiled, **kwargs)
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
-    return template.render(**kwargs)
-           ~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
-    self.environment.handle_exception()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "<template>", line 1, in top-level template code
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
-    raise_no_default("round", value)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
-    raise ValueError(
-    ...<2 lines>...
-    )
-ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
-    render_info._result = self.async_render(  # noqa: SLF001
-                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
-        variables, strict=strict, log_fn=log_fn, **kwargs
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
-    raise TemplateError(err) from err
-homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
-2026-02-03 15:36:43.550 ERROR (MainThread) [habluetooth.manager] Missing required permissions for Bluetooth management: Missing NET_ADMIN/NET_RAW capabilities for Bluetooth management. Automatic adapter recovery is unavailable. Add NET_ADMIN and NET_RAW capabilities to the container to enable it
-2026-02-03 15:36:43.553 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:36:45.100 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/miio/miot_device.py:23: FutureWarning: functools.partial will be a method descriptor in future Python versions; wrap it in enum.member() if you want to preserve the old behavior
-  Bool = partial(_str2bool)
-
-2026-02-03 15:36:45.328 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:36:45.341 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_default_certs with args (<ssl.SSLContext object at 0x7f9e047d71b0>, <Purpose.SERVER_AUTH: _ASN1Object(nid=129, shortname='serverAuth', longname='TLS Web Server Authentication', oid='1.3.6.1.5.5.7.3.1')>) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 722: context.load_default_certs(purpose)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 15:40:07.841 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.841 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration dreame_vacuum which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.842 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration soundtouchplus which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.842 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration myelectricaldata which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.843 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration tarif_edf which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.843 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration garmin_connect which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:07.843 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration myEnedis which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-02-03 15:40:09.247 ERROR (MainThread) [habluetooth.manager] Missing required permissions for Bluetooth management: Missing NET_ADMIN/NET_RAW capabilities for Bluetooth management. Automatic adapter recovery is unavailable. Add NET_ADMIN and NET_RAW capabilities to the container to enable it
+2026-02-03 15:40:09.249 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:09.578 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_default_certs with args (<ssl.SSLContext object at 0x7fc133b63750>, <Purpose.SERVER_AUTH: _ASN1Object(nid=129, shortname='serverAuth', longname='TLS Web Server Authentication', oid='1.3.6.1.5.5.7.3.1')>) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 722: context.load_default_certs(purpose)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#load_default_certs
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -219,7 +43,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 15:36:45.343 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to set_default_verify_paths with args (<ssl.SSLContext object at 0x7f9e047d71b0>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 534: self.set_default_verify_paths()), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 15:40:09.580 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to set_default_verify_paths with args (<ssl.SSLContext object at 0x7fc133b63750>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/ssl.py, line 534: self.set_default_verify_paths()), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#set_default_verify_paths
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -255,7 +79,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 15:36:45.357 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_verify_locations with args (<ssl.SSLContext object at 0x7f9e047d71b0>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 124: ssl_ctx.load_verify_locations(cafile=cert_path)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 15:40:09.593 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to load_verify_locations with args (<ssl.SSLContext object at 0x7fc133b63750>,) inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 124: ssl_ctx.load_verify_locations(cafile=cert_path)), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#load_verify_locations
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -291,7 +115,7 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 15:36:45.360 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open with args (PosixPath('/config/.storage/freebox/dixn7vr3_fbxos_fr.conf'), 'r') inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 328: with open(token_file, "r") as f:), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
+2026-02-03 15:40:09.595 WARNING (MainThread) [homeassistant.util.loop] Detected blocking call to open with args (PosixPath('/config/.storage/freebox/dixn7vr3_fbxos_fr.conf'), 'r') inside the event loop by integration 'freebox' at homeassistant/components/freebox/__init__.py, line 22: await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT]) (offender: /usr/local/lib/python3.13/site-packages/freebox_api/aiofreepybox.py, line 328: with open(token_file, "r") as f:), please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+freebox%22
 For developers, please see https://developers.home-assistant.io/docs/asyncio_blocking_operations/#open
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
@@ -327,30 +151,228 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.13/site-packages/homeassistant/components/freebox/__init__.py", line 22, in async_setup_entry
     await api.open(entry.data[CONF_HOST], entry.data[CONF_PORT])
 
-2026-02-03 15:36:46.165 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 15:36:46.181 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 15:36:46.193 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 15:36:46.205 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
-2026-02-03 15:36:46.501 WARNING (MainThread) [homeassistant.components.freebox.router] Router Freebox Server (r2) API does not support RAID
-2026-02-03 15:36:46.508 WARNING (MainThread) [homeassistant.components.freebox.router] Home access is not granted
-2026-02-03 15:36:47.156 ERROR (MainThread) [myelectricaldatapy.mypdl] ['Il est possible de recevoir au maximun 1095j de données ', 'consécutives. Merci de split vos demandes']
-2026-02-03 15:36:55.309 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:36:55.314 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:37:00.443 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:37:00.903 WARNING (SyncWorker_7) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:37:05.588 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:37:15.900 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:37:20.567 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:37:30.902 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:37:45.902 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:37:46.069 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:38:00.900 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:38:15.901 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:38:30.902 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:38:40.896 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:38:45.902 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:39:00.902 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:39:06.441 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
-2026-02-03 15:39:15.902 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:39:30.903 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
-2026-02-03 15:39:45.902 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:40:09.736 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:40:10.026 WARNING (ImportExecutor_0) [py.warnings] /usr/local/lib/python3.13/site-packages/miio/miot_device.py:23: FutureWarning: functools.partial will be a method descriptor in future Python versions; wrap it in enum.member() if you want to preserve the old behavior
+  Bool = partial(_str2bool)
+
+2026-02-03 15:40:10.676 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%) renders=2>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
+    value = round(float(value), precision)
+                  ~~~~~^^^^^^^
+ValueError: could not convert string to float: 'unknown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
+    render_result = render_with_context(self.template, compiled, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
+    raise_no_default("round", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
+2026-02-03 15:40:10.679 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%) renders=2>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
+    value = round(float(value), precision)
+                  ~~~~~^^^^^^^
+ValueError: could not convert string to float: 'unknown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
+    render_result = render_with_context(self.template, compiled, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
+    raise_no_default("round", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
+2026-02-03 15:40:10.709 WARNING (MainThread) [homeassistant.components.freebox.router] Router Freebox Server (r2) API does not support RAID
+2026-02-03 15:40:10.719 WARNING (MainThread) [homeassistant.components.freebox.router] Home access is not granted
+2026-02-03 15:40:10.827 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%) renders=6>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
+    value = round(float(value), precision)
+                  ~~~~~^^^^^^^
+ValueError: could not convert string to float: 'unknown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
+    render_result = render_with_context(self.template, compiled, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
+    raise_no_default("round", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%' but no default was specified
+2026-02-03 15:40:10.829 ERROR (MainThread) [homeassistant.helpers.event] Error while processing template: Template<template=({{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%) renders=6>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1811, in forgiving_round
+    value = round(float(value), precision)
+                  ~~~~~^^^^^^^
+ValueError: could not convert string to float: 'unknown'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 469, in async_render
+    render_result = render_with_context(self.template, compiled, **kwargs)
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/context.py", line 45, in render_with_context
+    return template.render(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 1816, in forgiving_round
+    raise_no_default("round", value)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/helpers.py", line 13, in raise_no_default
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 587, in async_render_to_info
+    render_info._result = self.async_render(  # noqa: SLF001
+                          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        variables, strict=strict, log_fn=log_fn, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/lib/python3.13/site-packages/homeassistant/helpers/template/__init__.py", line 471, in async_render
+    raise TemplateError(err) from err
+homeassistant.exceptions.TemplateError: ValueError: Template error: round got invalid input 'unknown' when rendering template '{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%' but no default was specified
+2026-02-03 15:40:11.677 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 15:40:11.719 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 15:40:11.748 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 15:40:11.766 WARNING (MainThread) [async_upnp_client.profiles.dlna] Only InstanceID 0 is supported
+2026-02-03 15:40:14.604 ERROR (MainThread) [myelectricaldatapy.mypdl] ['Il est possible de recevoir au maximun 1095j de données ', 'consécutives. Merci de split vos demandes']
+2026-02-03 15:40:19.546 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:19.548 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:25.016 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:27.037 WARNING (SyncWorker_2) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:40:29.655 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:42.034 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:40:45.136 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:40:57.037 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:41:10.021 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:41:12.034 WARNING (SyncWorker_7) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:41:27.038 WARNING (SyncWorker_4) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:41:42.038 WARNING (SyncWorker_9) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:41:57.037 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:42:05.269 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:42:12.038 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:42:27.037 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:42:30.465 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:42:42.038 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:42:57.034 WARNING (SyncWorker_9) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:43:12.036 WARNING (SyncWorker_7) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:43:25.634 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:43:27.037 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:43:42.036 WARNING (SyncWorker_2) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:43:50.898 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:43:57.036 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:44:12.036 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:44:27.036 WARNING (SyncWorker_7) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:44:42.036 WARNING (SyncWorker_3) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:44:45.986 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:44:57.036 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:45:11.031 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:45:12.036 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:45:27.037 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:45:42.040 WARNING (SyncWorker_2) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:45:57.034 WARNING (SyncWorker_6) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:46:06.288 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:46:12.041 WARNING (SyncWorker_9) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:46:27.036 WARNING (SyncWorker_0) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:46:31.180 ERROR (MainThread) [habluetooth.scanner] hci0 (D8:3B:BF:BA:6A:89): Failed to force stop scanner: 'NoneType' object has no attribute 'send'
+2026-02-03 15:46:42.037 WARNING (SyncWorker_5) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:46:57.037 WARNING (SyncWorker_8) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd
+2026-02-03 15:47:12.036 WARNING (SyncWorker_1) [homeassistant.components.systemmonitor.coordinator] Failed to load process with ID: 19, old name: s6-linux-init-shutdownd

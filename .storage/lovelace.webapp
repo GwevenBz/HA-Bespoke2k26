@@ -17,7 +17,7 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#audio",
-                  "name": "Musique 🎧",
+                  "name": "Musique à Corent 🎧",
                   "icon": "mdi:music",
                   "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(50px) !important; }"
                 },
@@ -28,27 +28,28 @@
                   "secondary": "{{ state_attr('media_player.spotify_1140761442', 'media_artist') | default('Prêt à écouter', true) }}",
                   "icon": "mdi:spotify",
                   "icon_color": "green",
-                  "card_mod": { "style": "ha-card { background: rgba(29,185,84,0.1); border-radius: 15px; border: 1px solid rgba(29,185,84,0.3); }" }
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 12px; }" }
                 },
-                { "type": "custom:bubble-card", "card_type": "separator", "name": "DIFFUSION BOSE & GROUPES", "icon": "mdi:speaker-multiple" },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_cuisine_2", "name": "Cuisine", "icon": "mdi:silverware", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
-                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_salle_de_bain", "name": "SdB", "icon": "mdi:shower", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
-                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.barre_de_son_bose", "name": "Salon", "icon": "mdi:television", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
-                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.partout", "name": "Partout", "icon": "mdi:home-group", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] }
-                  ]
-                },
-                { "type": "custom:bubble-card", "card_type": "separator", "name": "RACCOURCIS", "icon": "mdi:link" },
-                {
-                  "type": "horizontal-stack",
-                  "cards": [
                     { "type": "custom:bubble-card", "card_type": "button", "name": "Spotify", "icon": "mdi:spotify", "tap_action": { "action": "url", "url_path": "https://open.spotify.com" }, "card_layout": "tiny", "styles": ".bubble-button { background: rgba(29,185,84,0.1) !important; }" },
                     { "type": "custom:bubble-card", "card_type": "button", "name": "YouTube", "icon": "mdi:youtube", "tap_action": { "action": "url", "url_path": "https://www.youtube.com" }, "card_layout": "tiny", "styles": ".bubble-button { background: rgba(255,0,0,0.1) !important; }" }
                   ]
-                }
+                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "SORTIE AUDIO", "icon": "mdi:speaker-multiple" },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_salon_barre_de_son", "name": "Bose Salon", "icon": "mdi:speaker", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.barre_de_son_harman_cordon", "name": "Harman", "icon": "mdi:speaker", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_cuisine_2", "name": "Cuisine", "icon": "mdi:speaker", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_chambre_bureaux_parents", "name": "Chambre", "icon": "mdi:speaker", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] }
+                  ]
+                },
+                { "type": "custom:mushroom-media-player-card", "entity": "media_player.spotify_1140761442", "use_media_artwork": true, "show_volume_level": true, "fill_container": true, "card_mod": { "style": "ha-card { background: none; border: none; }" } }
               ]
             },
             {
@@ -135,7 +136,7 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#covers",
-                  "name": "Volets 🏠",
+                  "name": "Les 15 Volets 🏠",
                   "icon": "mdi:window-shutter",
                   "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; backdrop-filter: blur(45px) !important; }"
                 },
@@ -147,11 +148,18 @@
                     { "type": "custom:bubble-card", "card_type": "button", "button_type": "switch", "entity": "group.tous_les_volets", "name": "Fermer", "icon": "mdi:window-shutter", "styles": ".bubble-button { background: #c0392b !important; }" }
                   ]
                 },
-                { "type": "custom:bubble-card", "card_type": "separator", "name": "CONTRÔLE INDIVIDUEL", "icon": "mdi:window-shutter-cog" },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "CONTRÔLE INDIVIDUEL (15/15)", "icon": "mdi:window-shutter-cog" },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.salon", "name": "Salon", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.sejour", "name": "Séjour", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.cuisine", "name": "Cuisine", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.salle_de_bain", "name": "SdB", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_amandine", "name": "Combles Amandine", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_antho", "name": "Combles Antho", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.combles_bureau_marine", "name": "Combles Marine", "show_position_control": true },
                     { "type": "custom:mushroom-cover-card", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Bureau Impasse", "show_position_control": true },
                     { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_petite_fenetre_bureau", "name": "P. Fenêtre Bureau", "show_position_control": true },
                     { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_rue_basse", "name": "Alba Rue Basse", "show_position_control": true },
