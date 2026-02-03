@@ -168,6 +168,20 @@
                 {
                   "type": "custom:bubble-card",
                   "card_type": "separator",
+                  "name": "LOGEMENT \u0026 ÉNERGIES",
+                  "icon": "mdi:home-lightning-bolt"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:water", "icon_color": "blue", "primary": "{{ states('sensor.suez_water_consumption') }} m³", "secondary": "Eau (SUEZ)", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(33,150,243,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 70px; border: 1px solid rgba(33,150,243,0.1); }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:lightning-bolt", "icon_color": "yellow", "primary": "{{ states('sensor.tarif_edf_cout') }}€", "secondary": "Élec (EDF)", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,235,59,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 70px; border: 1px solid rgba(255,235,59,0.1); }" } }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
                   "name": "MONITORING SYSTÈME",
                   "icon": "mdi:server-network"
                 },
