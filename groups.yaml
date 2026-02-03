@@ -1,0 +1,18 @@
+tous_les_volets:
+  name: "Tous les volets"
+  entities:
+    - cover.combles_amandine
+    - cover.combles_bureau_antho
+    - cover.combles_bureau_marine
+    - cover.cuisine
+    - cover.fenetre_balcon_buanderie
+    - cover.oximo_s_auto_io_bureau_impasse
+    - cover.salle_de_bain
+    - cover.salon
+    - cover.sejour
+    - cover.s_so_rs100_io_alba_cote_amandine
+    - cover.s_so_rs100_io_alba_rue_basse
+    - cover.s_so_rs100_io_brune
+    - cover.s_so_rs100_io_fenetre_chambre_rdc
+    - cover.s_so_rs100_io_petite_fenetre_bureau
+    - cover.s_so_rs100_io_porte_ch_rdc

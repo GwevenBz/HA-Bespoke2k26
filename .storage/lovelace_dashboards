@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "map",
+        "icon": "mdi:map",
+        "title": "Map",
+        "url_path": "map",
+        "mode": "storage",
+        "show_in_sidebar": true,
+        "require_admin": false
+      },
+      {
+        "id": "webapp",
+        "icon": "mdi:cellphone-link",
+        "title": "Assistant Antho (Web App)",
+        "url_path": "webapp",
+        "mode": "storage",
+        "show_in_sidebar": true,
+        "require_admin": false
+      }
+    ]
+  }
+}

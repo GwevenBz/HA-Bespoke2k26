@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "668c0513319145828ca6ca9ed3837438",
+        "url": "/hacsfiles/mushroom-strategy/mushroom-strategy.js?hacstag=619284862250",
+        "type": "module"
+      },
+      {
+        "id": "9efdba2f98084646a0f3c00e16496fcc",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=4443503755010",
+        "type": "module"
+      },
+      {
+        "id": "card_mod_custom",
+        "url": "/local/community/lovelace-card-mod/card-mod.js",
+        "type": "module"
+      },
+      {
+        "id": "bubble_card_custom",
+        "url": "/local/community/bubble-card/bubble-card.js",
+        "type": "module"
+      }
+    ]
+  }
+}

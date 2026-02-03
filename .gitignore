@@ -1,0 +1,29 @@
+# Home Assistant Gitignore
+*.log
+*.db
+*.db-shm
+*.db-wal
+.HA_VERSION
+.ha_run.lock
+.cloud
+.cache
+.config
+.local
+
+# Secrets
+secrets.yaml
+
+# Storage - Exclude all but specific Lovelace configs
+.storage/*
+!.storage/lovelace_resources
+!.storage/lovelace_dashboards
+!.storage/lovelace.webapp
+
+# Themes and custom components
+# If you want to exclude HACS components, uncomment the next line
+# custom_components/
+
+# Other
+.DS_Store
+__pycache__/
+tts/

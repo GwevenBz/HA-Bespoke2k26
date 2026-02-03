@@ -1,0 +1,15 @@
+spotify_discovery_radio:
+  alias: "Lancer Radio Découverte"
+  icon: "mdi:auto-fix"
+  sequence:
+    - action: media_player.play_media
+      target:
+        entity_id: media_player.spotify_1140761442
+      data:
+        media_content_id: "spotify:section:0JQ5DAqbMKFz9S0699vG2e"
+        media_content_type: "playlist"
+    - action: soundtouchplus.remote_keypress
+      data:
+        entity_id: media_player.bose_salon_barre_de_son
+        key_id: PLAY
+  mode: single

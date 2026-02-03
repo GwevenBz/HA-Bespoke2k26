@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.webapp",
+  "data": {
+    "config": {
+      "title": "Assistant Antho (Bespoke 2026)",
+      "views": [
+        {
+          "title": "Home",
+          "path": "home",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#audio",
+                  "name": "Audio App",
+                  "icon": "mdi:music",
+                  "styles": ".bubble-pop-up { background: rgba(0,0,0,0.95) !important; }"
+                },
+                {
+                  "type": "media-control",
+                  "entity": "media_player.spotify_1140761442"
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "DIFFUSION AUDIO",
+                  "icon": "mdi:speaker-multiple"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_salon_barre_de_son", "name": "Bose Salon", "button_type": "state" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.barre_de_son_harman_cordon", "name": "Harman", "button_type": "state" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_cuisine_3", "name": "Cuisine", "button_type": "state" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_chambre_bureaux_parents", "name": "Chambre", "button_type": "state" }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "name": "Radio Découverte",
+                  "icon": "mdi:auto-fix",
+                  "tap_action": { "action": "call-service", "service": "script.spotify_discovery_radio" },
+                  "styles": ".bubble-button { background: #1DB954 !important; border-radius: 20px; }"
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#covers",
+                  "name": "Somfy Home App",
+                  "icon": "mdi:window-shutter"
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "entity": "group.tous_les_volets",
+                  "name": "TOUT FERMER",
+                  "button_type": "switch",
+                  "card_layout": "large",
+                  "styles": ".bubble-button { background-color: #c0392b !important; }"
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "REZ-DE-CHAUSSÉE",
+                  "icon": "mdi:home-floor-0"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salon", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.sejour", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.cuisine", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Chambre RDC", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte RDC", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.fenetre_balcon_buanderie", "name": "Buanderie", "button_type": "cover" }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "ÉTAGE",
+                  "icon": "mdi:home-floor-1"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_amandine", "name": "Amandine", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_antho", "name": "Bureau A.", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_marine", "name": "Bureau M.", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salle_de_bain", "name": "SDB", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Impasse", "button_type": "cover" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_brune", "name": "Brune", "button_type": "cover" }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "header",
+                  "name": "Assistant Antho",
+                  "icon": "mdi:home-automation"
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Somfy (Volets)",
+                  "icon": "mdi:window-shutter",
+                  "card_layout": "large",
+                  "tap_action": { "action": "navigate", "navigation_path": "#covers" },
+                  "styles": ".bubble-button { background: linear-gradient(135deg, #FF512F, #DD2476); border-radius: 30px; height: 140px !important; box-shadow: 0 10px 30px rgba(221, 36, 118, 0.5); }"
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "button_type": "name",
+                  "name": "Audio Center",
+                  "icon": "mdi:music",
+                  "card_layout": "large",
+                  "tap_action": { "action": "navigate", "navigation_path": "#audio" },
+                  "styles": ".bubble-button { background: linear-gradient(135deg, #1DB954, #191414); border-radius: 30px; height: 140px !important; margin-top: 20px; box-shadow: 0 10px 30px rgba(29, 185, 84, 0.5); }"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Jack",
+                      "icon": "mdi:robot-vacuum",
+                      "tap_action": { "action": "more-info", "entity": "vacuum.jack" },
+                      "styles": ".bubble-button { background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 25px; height: 110px !important; }"
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "name",
+                      "name": "Système",
+                      "icon": "mdi:server-network",
+                      "tap_action": { "action": "more-info", "entity": "sensor.system_monitor_temperature_du_processeur" },
+                      "styles": ".bubble-button { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 25px; height: 110px !important; }"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
