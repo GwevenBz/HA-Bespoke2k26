@@ -11,3 +11,17 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
 
+
+utility_meter:
+  linky_daily:
+    source: sensor.linky_17175976828544_consumption_standard
+    cycle: daily
+  linky_weekly:
+    source: sensor.linky_17175976828544_consumption_standard
+    cycle: weekly
+  linky_monthly:
+    source: sensor.linky_17175976828544_consumption_standard
+    cycle: monthly
+  linky_yearly:
+    source: sensor.linky_17175976828544_consumption_standard
+    cycle: yearly

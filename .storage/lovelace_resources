@@ -23,6 +23,11 @@
         "id": "bubble_card_custom",
         "url": "/local/community/bubble-card/bubble-card.js",
         "type": "module"
+      },
+      {
+        "id": "mini_graph_card_custom",
+        "url": "/local/mini-graph-card-bundle.js",
+        "type": "module"
       }
     ]
   }

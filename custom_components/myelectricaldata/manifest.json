@@ -1,0 +1,14 @@
+{
+  "domain": "myelectricaldata",
+  "name": "MyElectricalData",
+  "codeowners": ["@cyr-ius"],
+  "config_flow": true,
+  "dependencies": ["recorder"],
+  "documentation": "https://github.com/cyr-ius/hass-myelectricaldata",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/cyr-ius/hass-myelectricaldata/issues",
+  "loggers": ["myelectricaldatapy"],
+  "requirements": ["myelectricaldatapy==2.2.5"],
+  "version": "2.3.3"
+}

@@ -17,68 +17,114 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#audio",
-                  "name": "Musique à Corent 🎧",
+                  "name": "Musique 🎧",
                   "icon": "mdi:music",
                   "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(50px) !important; }"
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "entity": "media_player.spotify_1140761442",
-                  "primary": "{{ state_attr('media_player.spotify_1140761442', 'media_title') }}",
-                  "secondary": "{{ state_attr('media_player.spotify_1140761442', 'media_artist') }}",
+                  "primary": "{{ state_attr('media_player.spotify_1140761442', 'media_title') | default('Spotify', true) }}",
+                  "secondary": "{{ state_attr('media_player.spotify_1140761442', 'media_artist') | default('Prêt à écouter', true) }}",
                   "icon": "mdi:spotify",
                   "icon_color": "green",
-                  "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(90deg, rgba(29,185,84,0.15) 0%, rgba(25,20,20,0.2) 100%);\n  border-radius: 20px;\n  margin-bottom: 10px;\n  border: 1px solid rgba(29,185,84,0.3);\n}"
-                  }
+                  "card_mod": { "style": "ha-card { background: rgba(29,185,84,0.1); border-radius: 15px; border: 1px solid rgba(29,185,84,0.3); }" }
                 },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "DIFFUSION BOSE & GROUPES", "icon": "mdi:speaker-multiple" },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_cuisine_2", "name": "Cuisine", "icon": "mdi:silverware", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.bose_salle_de_bain", "name": "SdB", "icon": "mdi:shower", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.barre_de_son_bose", "name": "Salon", "icon": "mdi:television", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] },
+                    { "type": "custom:mushroom-media-player-card", "entity": "media_player.partout", "name": "Partout", "icon": "mdi:home-group", "layout": "horizontal", "volume_controls": ["volume_set", "volume_mute"] }
+                  ]
+                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "RACCOURCIS", "icon": "mdi:link" },
                 {
                   "type": "horizontal-stack",
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "primary": "Spotify", "icon": "mdi:spotify", "icon_color": "green", "tap_action": { "action": "url", "url_path": "https://open.spotify.com" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(29,185,84,0.3) 0%, rgba(10,10,10,0.6) 100%); border-radius: 15px; border: 1px solid rgba(29,185,84,0.2); }" } },
-                    { "type": "custom:mushroom-template-card", "primary": "YouTube", "icon": "mdi:youtube", "icon_color": "red", "tap_action": { "action": "url", "url_path": "https://www.youtube.com" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,0,0,0.3) 0%, rgba(10,10,10,0.6) 100%); border-radius: 15px; border: 1px solid rgba(255,0,0,0.2); }" } }
+                    { "type": "custom:bubble-card", "card_type": "button", "name": "Spotify", "icon": "mdi:spotify", "tap_action": { "action": "url", "url_path": "https://open.spotify.com" }, "card_layout": "tiny", "styles": ".bubble-button { background: rgba(29,185,84,0.1) !important; }" },
+                    { "type": "custom:bubble-card", "card_type": "button", "name": "YouTube", "icon": "mdi:youtube", "tap_action": { "action": "url", "url_path": "https://www.youtube.com" }, "card_layout": "tiny", "styles": ".bubble-button { background: rgba(255,0,0,0.1) !important; }" }
                   ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#suez",
+                  "name": "Eau 💧",
+                  "icon": "mdi:water",
+                  "styles": ".bubble-pop-up { background: rgba(10, 30, 50, 0.98) !important; backdrop-filter: blur(50px) !important; }"
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "entities": ["sensor.9480603550_consommation_d_eau_hier"],
+                  "name": "ÉVOLUTION (7 JOURS)",
+                  "hours_to_show": 168,
+                  "group_by": "date",
+                  "aggregate_func": "max",
+                  "show": { "graph": "bar", "name": true, "icon": false, "state": true, "legend": false, "labels": true },
+                  "line_color": "#2196f3",
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(33,150,243,0.2); padding: 10px; }" }
                 },
                 {
                   "type": "custom:bubble-card",
                   "card_type": "separator",
-                  "name": "SORTIE AUDIO",
-                  "icon": "mdi:speaker-multiple"
+                  "name": "PRIX & INFOS",
+                  "icon": "mdi:cash"
+                },
+                { "type": "custom:mushroom-entity-card", "entity": "sensor.9480603550_prix_de_l_eau", "name": "Prix m³", "icon_color": "green" }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "pop-up",
+                  "hash": "#linky",
+                  "name": "Électricité ⚡",
+                  "icon": "mdi:lightning-bolt",
+                  "styles": ".bubble-pop-up { background: rgba(20, 20, 10, 0.98) !important; backdrop-filter: blur(50px) !important; }"
+                },
+                {
+                  "type": "custom:mini-graph-card",
+                  "entities": ["sensor.linky_daily"],
+                  "name": "ÉVOLUTION (7 JOURS)",
+                  "hours_to_show": 168,
+                  "group_by": "date",
+                  "aggregate_func": "max",
+                  "show": { "graph": "bar", "name": true, "icon": false, "state": true, "legend": false, "labels": true },
+                  "line_color": "#ffeb3b",
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 20px; border: 1px solid rgba(255,235,59,0.2); padding: 10px; }" }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "CHARGE & ABONNEMENT",
+                  "icon": "mdi:transmission-tower"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Charge instantanée",
+                  "secondary": "Abonnement: 15 kVA • (Capteur TIC requis ⚠️)",
+                  "icon": "mdi:gauge",
+                  "icon_color": "grey",
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 15px; }" }
                 },
                 {
                   "type": "grid",
                   "columns": 2,
-                  "square": false,
                   "cards": [
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_salon_barre_de_son", "name": "Bose Salon", "button_type": "state", "styles": ".bubble-button { min-height: 50px !important; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%) !important; border: 1px solid rgba(255,255,255,0.1) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.salon", "name": "Harman Cast", "button_type": "state", "styles": ".bubble-button { min-height: 50px !important; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%) !important; border: 1px solid rgba(255,255,255,0.1) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_cuisine_3", "name": "Cuisine", "button_type": "state", "styles": ".bubble-button { min-height: 50px !important; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%) !important; border: 1px solid rgba(255,255,255,0.1) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "media_player.bose_chambre_bureaux_parents", "name": "Chambre", "button_type": "state", "styles": ".bubble-button { min-height: 50px !important; background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 100%) !important; border: 1px solid rgba(255,255,255,0.1) !important; }" }
-                  ],
-                  "card_mod": {
-                    "style": "ha-card {\n  margin-top: -15px !important;\n  grid-gap: 10px !important;\n}\n.grid { padding: 0 !important; }"
-                  }
-                },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "CONTRÔLE LECTURE (IPAD)",
-                  "icon": "mdi:play-circle"
-                },
-                {
-                  "type": "media-control",
-                  "entity": "media_player.spotify_1140761442",
-                  "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(180deg, rgba(29,185,84,0.15) 0%, rgba(0,0,0,0.4) 100%) !important;\n  border-radius: 25px !important;\n  border: 1px solid rgba(29,185,84,0.3) !important;\n  margin-top: -10px !important;\n}"
-                  }
-                },
-                {
-                   "type": "media-control",
-                   "entity": "media_player.salon",
-                   "name": "Cast YouTube (IPad Controller)",
-                   "card_mod": {
-                     "style": "ha-card {\n  background: linear-gradient(180deg, rgba(255,0,0,0.15) 0%, rgba(0,0,0,0.4) 100%) !important;\n  border-radius: 25px !important;\n  border: 1px solid rgba(255,0,0,0.3) !important;\n  margin-top: 10px !important;\n}"
-                   }
+                    { "type": "custom:mushroom-template-card", "primary": "Hebdo", "secondary": "{{ states('sensor.linky_weekly') }} kWh", "icon": "mdi:calendar-week", "icon_color": "blue", "layout": "horizontal", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; }" } },
+                    { "type": "custom:mushroom-template-card", "primary": "Mois", "secondary": "{{ states('sensor.linky_monthly') }} kWh", "icon": "mdi:calendar-month", "icon_color": "purple", "layout": "horizontal", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; }" } }
+                  ]
                 }
               ]
             },
@@ -89,49 +135,31 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#covers",
-                  "name": "Somfy Home App 🏠",
+                  "name": "Volets 🏠",
                   "icon": "mdi:window-shutter",
                   "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; backdrop-filter: blur(45px) !important; }"
-                },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "CONTRÔLE GLOBAL",
-                  "icon": "mdi:window-shutter"
                 },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:bubble-card", "card_type": "button", "button_type": "switch", "entity": "group.tous_les_volets", "name": "Ouvrir tout", "icon": "mdi:window-shutter-open", "styles": ".bubble-button { background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "button_type": "switch", "entity": "group.tous_les_volets", "name": "Fermer tout", "icon": "mdi:window-shutter", "styles": ".bubble-button { background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important; }" }
+                    { "type": "custom:bubble-card", "card_type": "button", "button_type": "switch", "entity": "group.tous_les_volets", "name": "Ouvrir", "icon": "mdi:window-shutter-open", "styles": ".bubble-button { background: #27ae60 !important; }" },
+                    { "type": "custom:bubble-card", "card_type": "button", "button_type": "switch", "entity": "group.tous_les_volets", "name": "Fermer", "icon": "mdi:window-shutter", "styles": ".bubble-button { background: #c0392b !important; }" }
                   ]
                 },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "VOLETS INDIVIDUELS",
-                  "icon": "mdi:home-floor-0"
-                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "CONTRÔLE INDIVIDUEL", "icon": "mdi:window-shutter-cog" },
                 {
                   "type": "grid",
-                  "columns": 4,
+                  "columns": 2,
                   "cards": [
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salon", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.sejour", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.cuisine", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Ch. RDC", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte Ch.", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_brune", "name": "Ch. Brune", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_alba_rue_basse", "name": "Rue Basse", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_amandine", "name": "Amandine", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_antho", "name": "Bur. A", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_marine", "name": "Bur. M", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salle_de_bain", "name": "SDB", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_petite_fenetre_bureau", "name": "P. Bur", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Impasse", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_alba_cote_amandine", "name": "C. Aman", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.fenetre_balcon_buanderie", "name": "Balcon", "button_type": "cover", "card_layout": "tiny", "styles": ".bubble-button { background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%) !important; border: 1px solid rgba(255,255,255,0.05) !important; }" }
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.oximo_s_auto_io_bureau_impasse", "name": "Bureau Impasse", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_petite_fenetre_bureau", "name": "P. Fenêtre Bureau", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_rue_basse", "name": "Alba Rue Basse", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_alba_cote_amandine", "name": "Alba Amandine", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_brune", "name": "Brune", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_porte_ch_rdc", "name": "Porte RDC", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Fenêtre RDC", "show_position_control": true },
+                    { "type": "custom:mushroom-cover-card", "entity": "cover.fenetre_balcon_buanderie", "name": "Buanderie", "show_position_control": true }
                   ]
                 }
               ]
@@ -142,74 +170,69 @@
                 {
                   "type": "custom:mushroom-template-card",
                   "primary": "Antho Assistant",
-                  "secondary": "{% set s = states('weather.forecast_maison') %}{% if s == 'cloudy' %}Nuageux{% elif s == 'partlycloudy' %}Éclaircies{% elif s == 'sunny' %}Ensoleillé{% elif s == 'rainy' %}Pluvieux{% else %}Conditions stables{% endif %} • {{ state_attr('weather.forecast_maison', 'temperature') }}°C",
+                  "secondary": "{% set s = states('weather.forecast_maison') %}{{ s.capitalize() if s != 'unknown' else 'Maison' }} • {{ state_attr('weather.forecast_maison', 'temperature') }}°C",
                   "icon": "mdi:robot-happy",
                   "icon_color": "white",
-                  "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);\n  backdrop-filter: blur(25px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.15);\n}\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.6); }"
-                  }
+                  "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%); backdrop-filter: blur(25px); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.15); }" }
                 },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "primary": "Maison", "secondary": "Volets Somfy", "icon": "mdi:window-shutter", "tap_action": { "action": "navigate", "navigation_path": "#covers" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 100%); border-radius: 20px; height: 100px; box-shadow: 0 10px 20px rgba(120, 75, 160, 0.4); border: 1px solid rgba(255,255,255,0.2); }\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.7); --card-mod-icon-color: white; }\n.primary { font-size: 20px !important; font-weight: 800 !important; }" } },
-                    { "type": "custom:mushroom-template-card", "primary": "Musique", "secondary": "Contrôle Audio", "icon": "mdi:music", "tap_action": { "action": "navigate", "navigation_path": "#audio" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #1DB954 0%, #191414 100%); border-radius: 20px; height: 100px; box-shadow: 0 10px 20px rgba(29, 185, 84, 0.3); border: 1px solid rgba(255,255,255,0.2); }\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.7); --card-mod-icon-color: #1DB954; }\n.primary { font-size: 20px !important; font-weight: 800 !important; }" } }
+                    { "type": "custom:mushroom-template-card", "primary": "Maison", "secondary": "Volets Somfy", "icon": "mdi:window-shutter", "tap_action": { "action": "navigate", "navigation_path": "#covers" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 100%); border-radius: 15px; height: 90px; border: 1px solid rgba(255,255,255,0.2); }\n.primary { font-size: 16px !important; font-weight: bold !important; }" } },
+                    { "type": "custom:mushroom-template-card", "primary": "Musique", "secondary": "Spotify & Bose", "icon": "mdi:music", "tap_action": { "action": "navigate", "navigation_path": "#audio" }, "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #1DB954 0%, #191414 100%); border-radius: 15px; height: 90px; border: 1px solid rgba(255,255,255,0.2); }\n.primary { font-size: 16px !important; font-weight: bold !important; }" } }
                   ]
                 },
-                {
-                  "type": "custom:mushroom-vacuum-card",
-                  "entity": "vacuum.jack",
-                  "name": "Jack",
-                  "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);\n  border-radius: 20px;\n  margin-top: 10px;\n  border: 1px solid rgba(255,255,255,0.1);\n}"
-                  }
-                },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "LOGEMENT \u0026 ÉNERGIES",
-                  "icon": "mdi:home-lightning-bolt"
-                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "LOGEMENT & ÉNERGIES", "icon": "mdi:home-lightning-bolt" },
                 {
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:water", "icon_color": "blue", "primary": "{{ states('sensor.suez_water_consumption') }} m³", "secondary": "Eau (SUEZ)", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(33,150,243,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 70px; border: 1px solid rgba(33,150,243,0.1); }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:lightning-bolt", "icon_color": "yellow", "primary": "{{ states('sensor.tarif_edf_cout') }}€", "secondary": "Élec (EDF)", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,235,59,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 70px; border: 1px solid rgba(255,235,59,0.1); }" } }
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        { "type": "custom:mushroom-template-card", "icon": "mdi:water", "icon_color": "blue", "primary": "{{ states('sensor.9480603550_consommation_d_eau_hier') | default('0', true) }} L", "secondary": "Eau (Hier)", "tap_action": { "action": "navigate", "navigation_path": "#suez" }, "card_mod": { "style": "ha-card { background: rgba(33,150,243,0.1); border-radius: 12px 12px 0 0; border: 1px solid rgba(33,150,243,0.1); border-bottom: none; }" } },
+                        { "type": "custom:mini-graph-card", "entities": ["sensor.9480603550_consommation_d_eau_hier"], "hours_to_show": 168, "group_by": "date", "aggregate_func": "max", "show": { "graph": "bar", "name": false, "icon": false, "state": false, "legend": false }, "tap_action": { "action": "navigate", "navigation_path": "#suez" }, "card_mod": { "style": "ha-card { background: rgba(10,10,10,0.4); border-radius: 0 0 12px 12px; border: 1px solid rgba(33,150,243,0.1); border-top: none; margin-top: -5px; height: 35px !important; }" } }
+                      ]
+                    },
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        { "type": "custom:mushroom-template-card", "icon": "mdi:lightning-bolt", "icon_color": "yellow", "primary": "{{ states('sensor.linky_daily') | default('0', true) }} kWh", "secondary": "Élec (Jour)", "tap_action": { "action": "navigate", "navigation_path": "#linky" }, "card_mod": { "style": "ha-card { background: rgba(255,235,59,0.1); border-radius: 12px 12px 0 0; border: 1px solid rgba(255,235,59,0.1); border-bottom: none; }" } },
+                        { "type": "custom:mini-graph-card", "entities": ["sensor.linky_daily"], "hours_to_show": 168, "group_by": "date", "aggregate_func": "max", "show": { "graph": "bar", "name": false, "icon": false, "state": false, "legend": false }, "tap_action": { "action": "navigate", "navigation_path": "#linky" }, "card_mod": { "style": "ha-card { background: rgba(10,10,10,0.4); border-radius: 0 0 12px 12px; border: 1px solid rgba(255,235,59,0.1); border-top: none; margin-top: -5px; height: 35px !important; }" } }
+                      ]
+                    }
                   ]
                 },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "MONITORING SYSTÈME",
-                  "icon": "mdi:server-network"
-                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "MONITORING SYSTÈME", "icon": "mdi:cpu-64-bit" },
                 {
                   "type": "grid",
                   "columns": 4,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:thermometer", "icon_color": "red", "primary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,0,0,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(255,0,0,0.1); }\n.primary { font-size: 10px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:cpu-64-bit", "icon_color": "blue", "primary": "{{ states('sensor.system_monitor_utilisation_du_processeur') }}%", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(33,150,243,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(33,150,243,0.1); }\n.primary { font-size: 10px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:memory", "icon_color": "purple", "primary": "{{ states('sensor.system_monitor_utilisation_de_la_memoire') }}%", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(156,39,176,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(156,39,176,0.1); }\n.primary { font-size: 10px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:harddisk", "icon_color": "orange", "primary": "{{ states('sensor.system_monitor_utilisation_du_disque_config') }}%", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,152,0,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(255,152,0,0.1); }\n.primary { font-size: 10px !important; }" } }
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:thermometer", "icon_color": "red", "primary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:cpu-64-bit", "icon_color": "blue", "primary": "{{ states('sensor.system_monitor_utilisation_du_processeur') }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:database", "icon_color": "purple", "primary": "{{ states('sensor.system_monitor_utilisation_du_disque_config') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:memory", "icon_color": "orange", "primary": "{{ states('sensor.system_monitor_utilisation_de_la_memoire') | round(0) }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
                   ]
                 },
-                {
-                  "type": "custom:bubble-card",
-                  "card_type": "separator",
-                  "name": "SANTÉ \u0026 BIEN-ÊTRE",
-                  "icon": "mdi:heart-pulse"
-                },
+                { "type": "custom:bubble-card", "card_type": "separator", "name": "SANTÉ & SPORT 🏃‍♂️", "icon": "mdi:heart-pulse" },
                 {
                   "type": "grid",
                   "columns": 4,
                   "cards": [
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:run", "icon_color": "orange", "primary": "{{ state_attr('sensor.garmin_connect_last_activity', 'distance') }}m", "secondary": "Dernier Run", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(255,152,0,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(255,152,0,0.1); }\n.primary { font-size: 10px !important; }\n.secondary { font-size: 8px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:sleep", "icon_color": "indigo", "primary": "{{ states('sensor.garmin_connect_sleep_score') }}", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(63,81,181,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(63,81,181,0.1); }\n.primary { font-size: 10px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:battery-heart-variant", "icon_color": "cyan", "primary": "{{ states('sensor.garmin_connect_body_battery_most_recent') }}%", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(0,188,212,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(0,188,212,0.1); }\n.primary { font-size: 10px !important; }" } },
-                    { "type": "custom:mushroom-template-card", "icon": "mdi:heart-pulse", "icon_color": "red", "primary": "{{ states('sensor.garmin_connect_resting_heart_rate') }}", "card_mod": { "style": "ha-card { background: linear-gradient(135deg, rgba(244,67,54,0.15) 0%, rgba(10,10,10,0.4) 100%); border-radius: 12px; height: 60px; border: 1px solid rgba(244,67,54,0.1); }\n.primary { font-size: 10px !important; }" } }
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:sleep", "icon_color": "purple", "primary": "{{ states('sensor.garmin_connect_sleep_score') }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:run", "icon_color": "yellow", "primary": "{% set a = states('sensor.garmin_connect_last_activity') %}{{ a if a != 'unknown' else 'N/A' }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 9px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:battery-heart", "icon_color": "blue", "primary": "{{ states('sensor.garmin_connect_body_battery_most_recent') }}%", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } },
+                    { "type": "custom:mushroom-template-card", "icon": "mdi:heart-pulse", "icon_color": "red", "primary": "{{ states('sensor.garmin_connect_resting_heart_rate') }}", "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 10px; height: 50px; }\n.primary { font-size: 10px !important; margin-top: -5px !important; }" } }
                   ]
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "NAS Indexer",
+                  "secondary": "Serveur & Multimédia",
+                  "icon": "mdi:server",
+                  "icon_color": "yellow",
+                  "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.05); border-radius: 15px; margin-top: 10px; height: 50px !important; }" }
                 }
               ]
             }
