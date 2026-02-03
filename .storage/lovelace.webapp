@@ -17,11 +17,9 @@
                   "type": "custom:bubble-card",
                   "card_type": "pop-up",
                   "hash": "#audio",
-                  "name": "Audio Center",
+                  "name": "Audio Center Pro",
                   "icon": "mdi:music",
-                  "margin_top_mobile": "18px",
-                  "margin_top_desktop": "18px",
-                  "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(45px) !important; border: 1px solid rgba(255,255,255,0.1); }"
+                  "styles": ".bubble-pop-up { background: rgba(10, 10, 10, 0.98) !important; backdrop-filter: blur(50px) !important; }"
                 },
                 {
                   "type": "media-control",
@@ -30,7 +28,47 @@
                 {
                   "type": "custom:bubble-card",
                   "card_type": "separator",
-                  "name": "DIFFUSION AUDIO",
+                  "name": "MA BIBLIOTHÈQUE SPOTIFY",
+                  "icon": "mdi:playlist-music"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Titres likés",
+                      "secondary": "Spotify",
+                      "picture": "https://misc.scdn.co/liked-songs/liked-songs-300.png",
+                      "tap_action": { "action": "call-service", "service": "media_player.play_media", "target": { "entity_id": "media_player.spotify_1140761442" }, "data": { "media_content_id": "spotify:playlist:liked-songs", "media_content_type": "playlist" } }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "This Is GIMS",
+                      "secondary": "Spotify",
+                      "picture": "https://i.scdn.co/image/ab67706f000000030589a804791e84742cb4f553",
+                      "tap_action": { "action": "call-service", "service": "media_player.play_media", "target": { "entity_id": "media_player.spotify_1140761442" }, "data": { "media_content_id": "spotify:playlist:37i9dQZF1DZ06evO1qHeIe", "media_content_type": "playlist" } }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Focus Deep",
+                      "secondary": "Spotify",
+                      "picture": "https://i.scdn.co/image/ab67706f000000037ebcc696e579308465cebadf",
+                      "tap_action": { "action": "call-service", "service": "media_player.play_media", "target": { "entity_id": "media_player.spotify_1140761442" }, "data": { "media_content_id": "spotify:playlist:37i9dQZF1DX6VfbtQIEpYq", "media_content_type": "playlist" } }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Liquid DnB",
+                      "secondary": "Spotify",
+                      "picture": "https://i.scdn.co/image/ab67706f00000003ea1cf8690cd45a764d7c07e2",
+                      "tap_action": { "action": "call-service", "service": "media_player.play_media", "target": { "entity_id": "media_player.spotify_1140761442" }, "data": { "media_content_id": "spotify:playlist:37i9dQZF1DX83777oY0u6G", "media_content_type": "playlist" } }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "SÉLECTEUR DE SORTIE",
                   "icon": "mdi:speaker-multiple"
                 },
                 {
@@ -54,18 +92,31 @@
                   "hash": "#covers",
                   "name": "Somfy Home App",
                   "icon": "mdi:window-shutter",
-                  "margin_top_mobile": "18px",
-                  "margin_top_desktop": "18px",
-                  "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; backdrop-filter: blur(45px) !important; border: 1px solid rgba(255,255,255,0.1); }"
+                  "styles": ".bubble-pop-up { background: rgba(15, 15, 15, 0.98) !important; backdrop-filter: blur(45px) !important; }"
                 },
                 {
-                  "type": "custom:bubble-card",
-                  "card_type": "button",
-                  "entity": "group.tous_les_volets",
-                  "name": "FERMER TOUTE LA MAISON",
-                  "button_type": "switch",
-                  "card_layout": "large",
-                  "styles": ".bubble-button { background-color: #c0392b !important; }"
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "group.tous_les_volets",
+                      "name": "Ouvrir tout",
+                      "icon": "mdi:window-shutter-open",
+                      "styles": ".bubble-button { background-color: #27ae60 !important; }"
+                    },
+                    {
+                      "type": "custom:bubble-card",
+                      "card_type": "button",
+                      "button_type": "switch",
+                      "entity": "group.tous_les_volets",
+                      "name": "Fermer tout",
+                      "icon": "mdi:window-shutter",
+                      "styles": ".bubble-button { background-color: #c0392b !important; }"
+                    }
+                  ]
                 },
                 {
                   "type": "custom:bubble-card",
@@ -77,10 +128,26 @@
                   "type": "grid",
                   "columns": 2,
                   "cards": [
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salon", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.sejour", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.cuisine", "button_type": "cover" },
-                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Chambre RDC", "button_type": "cover" }
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salon", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.sejour", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.cuisine", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.s_so_rs100_io_fenetre_chambre_rdc", "name": "Chambre RDC", "button_type": "cover", "card_layout": "tiny" }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "ÉTAGE",
+                  "icon": "mdi:home-floor-1"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_amandine", "name": "Amandine", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_antho", "name": "Bureau A.", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.combles_bureau_marine", "name": "Bureau M.", "button_type": "cover", "card_layout": "tiny" },
+                    { "type": "custom:bubble-card", "card_type": "button", "entity": "cover.salle_de_bain", "name": "SDB", "button_type": "cover", "card_layout": "tiny" }
                   ]
                 }
               ]
@@ -91,31 +158,98 @@
                 {
                   "type": "custom:mushroom-template-card",
                   "primary": "Antho Assistant",
-                  "secondary": "Domotique Bespoke 2026",
-                  "icon": "mdi:home-automation",
+                  "secondary": "Bespoke 2k26 Dashboard",
+                  "icon": "mdi:robot-happy",
                   "icon_color": "white",
                   "card_mod": {
-                    "style": "ha-card {\n  background: rgba(255, 255, 255, 0.05);\n  backdrop-filter: blur(25px);\n  border-radius: 25px;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  margin-bottom: 25px;\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.7);\n}"
+                    "style": "ha-card {\n  background: rgba(255, 255, 255, 0.05);\n  backdrop-filter: blur(30px);\n  border-radius: 30px;\n  border: 1px solid rgba(255, 255, 255, 0.1);\n}\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.7); }"
                   }
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Météo",
+                      "secondary": "{{ states('weather.forecast_maison') }} ({{ state_attr('weather.forecast_maison', 'temperature') }}°C)",
+                      "icon": "mdi:weather-partly-cloudy",
+                      "icon_color": "light-blue",
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "NAS Explorer",
+                      "secondary": "Cloud Privé",
+                      "icon": "mdi:folder-search",
+                      "icon_color": "amber",
+                      "tap_action": { "action": "url", "url_path": "https://91.168.245.245:18441/files/" },
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "BIEN-ÊTRE & GARMIN",
+                  "icon": "mdi:heart-pulse"
+                },
+                {
+                  "type": "grid",
+                  "columns": 2,
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Sommeil",
+                      "secondary": "{{ state_attr('sensor.garmin_connect_sleep_score', 'sleep_score') }} / 100",
+                      "icon": "mdi:sleep",
+                      "icon_color": "deep-purple",
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Dernier Run",
+                      "secondary": "{{ states('sensor.garmin_connect_last_activity') }}",
+                      "icon": "mdi:run",
+                      "icon_color": "orange",
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Pouls Repos",
+                      "secondary": "{{ states('sensor.garmin_connect_resting_heart_rate') }} bpm",
+                      "icon": "mdi:heart-speedometer",
+                      "icon_color": "red",
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    },
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Body Battery",
+                      "secondary": "{{ states('sensor.garmin_connect_body_battery_most_recent') }}%",
+                      "icon": "mdi:battery-heart-variant",
+                      "icon_color": "cyan",
+                      "card_mod": { "style": "ha-card { background: rgba(255,255,255,0.03); border-radius: 20px; }" }
+                    }
+                  ]
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "primary": "Somfy (Volets)",
-                  "secondary": "Contrôle des 15 volets",
+                  "secondary": "15 volets connectés",
                   "icon": "mdi:window-shutter",
                   "tap_action": { "action": "navigate", "navigation_path": "#covers" },
                   "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);\n  border-radius: 35px;\n  height: 160px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.85);\n  --card-mod-icon-color: white;\n}\n.container { padding: 35px !important; }\n.primary { font-size: 28px !important; font-weight: 800 !important; }\n.secondary { font-size: 16px !important; margin-top: 5px !important; }"
+                    "style": "ha-card {\n  background: linear-gradient(135deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);\n  border-radius: 35px;\n  height: 140px;\n  margin-top: 15px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.85); --card-mod-icon-color: white; }\n.primary { font-size: 26px !important; font-weight: 800 !important; }"
                   }
                 },
                 {
                   "type": "custom:mushroom-template-card",
                   "primary": "Audio Center",
-                  "secondary": "Bose & Harman Kardon",
+                  "secondary": "Spotify & Multiroom",
                   "icon": "mdi:music",
                   "tap_action": { "action": "navigate", "navigation_path": "#audio" },
                   "card_mod": {
-                    "style": "ha-card {\n  background: linear-gradient(135deg, #1DB954 0%, #191414 100%);\n  border-radius: 35px;\n  height: 160px;\n  margin-top: 30px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host {\n  --primary-text-color: white;\n  --secondary-text-color: rgba(255,255,255,0.85);\n  --card-mod-icon-color: #1DB954;\n}\n.container { padding: 35px !important; }\n.primary { font-size: 28px !important; font-weight: 800 !important; }\n.secondary { font-size: 16px !important; margin-top: 5px !important; }"
+                    "style": "ha-card {\n  background: linear-gradient(135deg, #1DB954 0%, #191414 100%);\n  border-radius: 35px;\n  height: 140px;\n  margin-top: 25px;\n  box-shadow: 0 15px 35px rgba(0,0,0,0.4);\n}\n:host { --primary-text-color: white; --secondary-text-color: rgba(255,255,255,0.85); --card-mod-icon-color: #1DB954; }\n.primary { font-size: 26px !important; font-weight: 800 !important; }"
                   }
                 },
                 {
@@ -128,9 +262,7 @@
                       "secondary": "Aspirateur",
                       "icon": "mdi:robot-vacuum",
                       "tap_action": { "action": "more-info", "entity": "vacuum.jack" },
-                      "card_mod": {
-                        "style": "ha-card {\n  background: linear-gradient(135deg, #4facfe, #00f2fe);\n  border-radius: 30px;\n  height: 120px;\n}\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }"
-                      }
+                      "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #4facfe, #00f2fe); border-radius: 25px; height: 110px; }\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }" }
                     },
                     {
                       "type": "custom:mushroom-template-card",
@@ -138,9 +270,7 @@
                       "secondary": "{{ states('sensor.system_monitor_temperature_du_processeur') }}°C",
                       "icon": "mdi:server-network",
                       "tap_action": { "action": "more-info", "entity": "sensor.system_monitor_temperature_du_processeur" },
-                      "card_mod": {
-                        "style": "ha-card {\n  background: linear-gradient(135deg, #667eea, #764ba2);\n  border-radius: 30px;\n  height: 120px;\n}\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }"
-                      }
+                      "card_mod": { "style": "ha-card { background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 25px; height: 110px; }\n:host { --primary-text-color: white; --secondary-text-color: white; --card-mod-icon-color: white; }" }
                     }
                   ]
                 }
