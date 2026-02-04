@@ -13,3 +13,18 @@ spotify_discovery_radio:
         entity_id: media_player.bose_salon_barre_de_son
         key_id: PLAY
   mode: single
+
+find_on_nas:
+  alias: "Rechercher un fichier sur le NAS"
+  description: "Recherche un fichier ou dossier sur le disque dur NAS"
+  fields:
+    term:
+      description: "Le nom ou mot clé du fichier à chercher"
+      example: "facture"
+  sequence:
+    - action: shell_command.find_nas_file
+      data:
+        term: "{{ term }}"
+      response_variable: results
+    - stop: "Recherche terminée"
+      response_variable: results
